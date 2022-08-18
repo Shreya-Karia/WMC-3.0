@@ -12,4 +12,7 @@ def index(request):
 def sign_in(request):
     return render_nextjs_page_sync(request)
 
+def sign_up(request):
+    return render_nextjs_page_sync(request)
+
 
