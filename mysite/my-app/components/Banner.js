@@ -2,24 +2,62 @@ import React from 'react'
 import { motion } from "framer-motion";
 import Image from 'next/image'
 
+import { useState, useEffect } from 'react';
+
+
+// Hook
+function useWindowSize() {
+  // Initialize state with undefined width/height so server and client renders match
+  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+
+  useEffect(() => {
+    // only execute all the code below in client side
+    if (typeof window !== 'undefined') {
+      // Handler to call on window resize
+      function handleResize() {
+        // Set window width/height to state
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      }
+    
+      // Add event listener
+      window.addEventListener("resize", handleResize);
+     
+      // Call handler right away so state gets updated with initial window size
+      handleResize();
+    
+      // Remove event listener on cleanup
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []); // Empty array ensures that effect is only run on mount
+  return windowSize;
+}
+
 const Banner = () => {
+  const w_w = useWindowSize().width;
   return (
     <div className='grid lg:grid-cols-2 grid-rows-2 lg:h-[65vh] md:h-[50vh] h-[40vh]'>
     <div className='flex flex-col space-y-2 py-16 md:space-y-4 lg:h-[65vh] lg:w-[65vh] md:h-[50vh] md:w-[50vh] h-[40vh] w-[40vh] justify-center lg:pb-12 md:pb-9'>
         <motion.h1 whileInView={{
               position: "absolute",
-              left: 160,
+              left: (w_w/20),
               transition: {
-                duration: 2,
+                duration: 1,
               },
-            }} className='text-8xl font-bold md:text-7xl lg:text-9xl -left-10  bg-clip-text text-transparent bg-gradient-to-r to-[#13547A] from-[#80D0C7] '>
+            }} className='text-7xl font-bold md:text-9xl lg:text-9xl -left-10  bg-clip-text text-transparent bg-gradient-to-r to-[#13547A] from-[#80D0C7] '>
             Welcome
         </motion.h1>
         <motion.p whileInView={{
               position: "absolute",
-              left: 160,
+              left: (w_w/20),
               transition: {
-                duration: 2,
+                duration: 1,
               },
             }} className='max-w-xs text-xs text-shadow-md -left-10 md:max-w-lg md:text-lg lg:max-w-2xl lg:text-2xl pl-32 pt-32'>BROWSE. SELECT. ENJOY.</motion.p>
           </div>
@@ -27,7 +65,7 @@ const Banner = () => {
               position: "absolute",
               right: 200,
               transition: {
-                duration: 2,
+                duration: 1,
               },
             }} className='md:flex hidden flex-col  py-16 space-y-4 -right-10 lg:h-[65vh] lg:w-[90vh] md:h-[50vh] md:w-[50vh] h-[40vh] w-[40vh] justify-center '>
                 <div className='grid grid-rows-3 gap-5'>
