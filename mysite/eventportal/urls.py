@@ -4,4 +4,7 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("sign_in", views.sign_in, name="sign_in"),
     path("sign_up",views.sign_up,name="sign_up"),
+    path("", views.mainpage, name="mainpage"),
+    path("saveUser", views.saveUser),
+    path("printUser", views.printUser)
 ]
