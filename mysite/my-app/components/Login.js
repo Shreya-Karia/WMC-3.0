@@ -7,12 +7,14 @@ const Login = () => {
         <div className="text-center text-[#000428] mb-8">
           <h1 className="font-bold text-3xl">LOGIN</h1>
         </div>
-        <form action="#">
+        <form action="login" method="POST" >
           <div className="mt-5 text-[#004E92]">
             <label for="username">Email</label>
             <input
-              type="text"
+              type="email"
               id="username"
+              name="email"
+              required
               className="block w-full p-2 border rounded bg-white border-[#000428]"
             />
           </div>
@@ -21,6 +23,8 @@ const Login = () => {
             <input
               type="password"
               id="password"
+              name="password"
+              required
               className="block w-full p-2 border rounded bg-white border-[#000428]"
             />
           </div>

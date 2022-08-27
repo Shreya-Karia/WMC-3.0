@@ -15,7 +15,7 @@ const Navbar = () => {
             </div>
             <div class="md:hidden flex items-center">
 						<button class="outline-none mobile-menu-button">
-						<svg class=" w-6 h-6 text-gray-500 hover:text-green-500 "
+						<svg class=" w-6 h-6 text-gray-500 hover:text-[#80D0C7] "
 							x-show="!showMenu"
 							fill="none"
 							stroke-linecap="round"

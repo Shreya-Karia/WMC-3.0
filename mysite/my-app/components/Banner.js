@@ -63,7 +63,7 @@ const Banner = () => {
           </div>
              <motion.div whileInView={{
               position: "absolute",
-              right: 200,
+              right: w_w/24,
               transition: {
                 duration: 1,
               },
