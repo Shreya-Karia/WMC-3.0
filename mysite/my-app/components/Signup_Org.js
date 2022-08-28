@@ -6,7 +6,7 @@ const Signup_org = () => {
 
   return (
     <div class="md:flex md:flex-row lg:space-x-20 md:space-x-16 flex flex-col-reverse lg:p-2 md:p-4 p-10">
-      <div className="max-w-lg  md:my-24 my-10 bg-white px-5 py-10 rounded shadow-xl drop-shadow-xl">
+      <div className="max-w-3xl  md:my-24 my-10 bg-white px-5 py-10 rounded shadow-xl drop-shadow-xl">
         <div className="text-center text-[#000428] mb-8">
           <h1 className="font-bold text-3xl">SIGN UP</h1>
         </div>

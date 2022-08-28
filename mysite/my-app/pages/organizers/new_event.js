@@ -129,6 +129,16 @@ const new_event = () => {
               className="block w-full p-2 border rounded bg-white border-[#000428] text-[#000428] font-bold"
             />
           </div>
+          <div className="mt-5 text-[#80D0C7]">
+            <label for="passwordc">Poster</label>
+            <input
+              type="url"
+              id="username"
+              name="password2"
+              required
+              className="block w-full p-2 border rounded bg-white border-[#000428] text-[#000428] font-bold"
+            />
+          </div>
           <div className="mt-10">
             <input
               type="submit"
