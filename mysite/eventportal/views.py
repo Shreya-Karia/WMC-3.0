@@ -5,12 +5,15 @@ from django.views.decorators.csrf import ensure_csrf_cookie
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User, auth
 from eventportal.models import newUser
+# from adminportal.models import event
 
 # def index(request):
 #     return HttpResponse("Hello world!")
 
 
 def index(request):
+    # event_post = event.objects.get()
+    # context = {'event_post': event_post}
     return render_nextjs_page_sync(request)
 
 def sign_in(request):

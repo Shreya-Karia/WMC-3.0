@@ -6,7 +6,7 @@ const new_event = () => {
     <div className='relative bg-black'>
         <Navbar_Org />
         <div className='lg:my-20 md:my-16 my-5 lg:mx-20'>
-        <form method="POST" name="form" action="" className='md:grid md:grid-cols-2 grid grid-cols-1 gap-x-20'>
+        <form method="POST" name="form" action="newEvent" className='md:grid md:grid-cols-2 grid grid-cols-1 gap-x-20'>
           {/* <CSRFToken /> */}
         {/* {% csrf_token %} */}
         <div className="mt-5 text-[#80D0C7]">
@@ -14,7 +14,7 @@ const new_event = () => {
             <input
               type="text"
               id="username"
-              name = "name"
+              name = "event_name"
               required
               className="block w-full p-2 border rounded bg-white border-[#000428] text-[#000428] font-bold"
             />
@@ -24,7 +24,7 @@ const new_event = () => {
             <input
               type="date"
               id="username"
-              name = "name"
+              name = "date"
               required
               className="block w-full p-2 border rounded bg-white border-[#000428] text-[#000428] font-bold"
             />
@@ -34,7 +34,7 @@ const new_event = () => {
             <input
               type="time"
               id="username"
-              name= "email"
+              name= "stime"
               required
               className="block w-full p-2 border rounded bg-white border-[#000428] text-[#000428] font-bold"
             />
@@ -44,7 +44,7 @@ const new_event = () => {
             <input
               type="time"
               id="username"
-              name = "name"
+              name = "etime"
               required
               className="block w-full p-2 border rounded bg-white border-[#000428] text-[#000428] font-bold"
             />
@@ -54,7 +54,7 @@ const new_event = () => {
             <input
               type="text"
               id="password"
-              name="password"
+              name="venue"
               required
               className="block w-full p-2 border rounded bg-white border-[#000428] text-[#000428] font-bold"
             />
@@ -64,7 +64,7 @@ const new_event = () => {
             <input
               type="url"
               id="username"
-              name = "name"
+              name = "location"
               required
               className="block w-full p-2 border rounded bg-white border-[#000428] text-[#000428] font-bold"
             />
@@ -74,7 +74,7 @@ const new_event = () => {
             <input
               type="text"
               id="username"
-              name="password2"
+              name="description"
               required
               className="block w-full p-2 border rounded bg-white border-[#000428] text-[#000428] font-bold"
             />
@@ -84,7 +84,7 @@ const new_event = () => {
             <input
               type="number"
               id="username"
-              name="password2"
+              name="seats"
               required
               className="block w-full p-2 border rounded bg-white border-[#000428] text-[#000428] font-bold"
             />
@@ -94,7 +94,7 @@ const new_event = () => {
             <input
               type="text"
               id="username"
-              name="password2"
+              name="contact_person"
               required
               className="block w-full p-2 border rounded bg-white border-[#000428] text-[#000428] font-bold"
             />
@@ -104,7 +104,7 @@ const new_event = () => {
             <input
               type="number"
               id="username"
-              name="password2"
+              name="contact_no"
               required
               className="block w-full p-2 border rounded bg-white border-[#000428] text-[#000428] font-bold"
             />
@@ -114,7 +114,7 @@ const new_event = () => {
             <input
               type="number"
               id="username"
-              name="password2"
+              name="fees"
               required
               className="block w-full p-2 border rounded bg-white border-[#000428] text-[#000428] font-bold"
             />
@@ -124,7 +124,7 @@ const new_event = () => {
             <input
               type="date"
               id="username"
-              name="password2"
+              name="last_day"
               required
               className="block w-full p-2 border rounded bg-white border-[#000428] text-[#000428] font-bold"
             />
@@ -134,7 +134,7 @@ const new_event = () => {
             <input
               type="url"
               id="username"
-              name="password2"
+              name="event_photo"
               required
               className="block w-full p-2 border rounded bg-white border-[#000428] text-[#000428] font-bold"
             />

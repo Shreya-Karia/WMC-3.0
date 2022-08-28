@@ -20,4 +20,5 @@ urlpatterns = [
     path("", include("django_nextjs.urls")),
     path('', include('eventportal.urls')),
     path('admin/', admin.site.urls),
+    path('organizers/',include('adminportal.urls')),
 ]

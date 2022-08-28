@@ -10,7 +10,7 @@ const Signup_org = () => {
         <div className="text-center text-[#000428] mb-8">
           <h1 className="font-bold text-3xl">SIGN UP</h1>
         </div>
-        <form method="POST" name="form" action="" className='md:grid md:grid-cols-2 grid grid-cols-1 gap-x-5'>
+        <form method="POST" name="form" action="newAdmin" className='md:grid md:grid-cols-2 grid grid-cols-1 gap-x-5'>
           {/* <CSRFToken /> */}
         {/* {% csrf_token %} */}
         <div className="mt-5 text-[#004E92]">
@@ -18,7 +18,7 @@ const Signup_org = () => {
             <input
               type="text"
               id="username"
-              name = "name"
+              name = "organization_name"
               required
               className="block w-full p-2 border rounded bg-white border-[#000428]"
             />
@@ -38,7 +38,7 @@ const Signup_org = () => {
             <input
               type="text"
               id="username"
-              name = "name"
+              name = "organizer_name"
               required
               className="block w-full p-2 border rounded bg-white border-[#000428]"
             />
@@ -48,7 +48,7 @@ const Signup_org = () => {
             <input
               type="number"
               id="username"
-              name = "name"
+              name = "contact_no"
               required
               className="block w-full p-2 border rounded bg-white border-[#000428]"
             />
@@ -58,7 +58,7 @@ const Signup_org = () => {
             <input
               type="text"
               id="username"
-              name = "name"
+              name = "address"
               required
               className="block w-full p-2 border rounded bg-white border-[#000428]"
             />

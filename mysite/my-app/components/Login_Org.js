@@ -7,7 +7,7 @@ const Login_Org = () => {
         <div className="text-center text-[#000428] mb-8">
           <h1 className="font-bold text-3xl">LOGIN</h1>
         </div>
-        <form action="" method="POST" >
+        <form action="log_in" method="POST" >
           <div className="mt-5 text-[#004E92]">
             <label for="username">Email</label>
             <input
