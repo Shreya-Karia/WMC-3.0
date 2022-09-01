@@ -48,7 +48,7 @@ def newAdmin(request):
 def newEvent(request):
     if request.method == 'POST':
         
-        username = username.POST["username"]
+        # username = username.POST["username"]
         event_name = request.POST["event_name"]
         event_photo = request.POST['event_photo']
         stime = request.POST['stime']
@@ -63,8 +63,7 @@ def newEvent(request):
         fees = request.POST['fees']
         last_day = request.POST['last_day']
 
-        user_model = event(     username = username,
-                                event_name = event_name, 
+        user_model = event(     event_name = event_name, 
                                 event_photo = event_photo, 
                                 stime = stime, 
                                 etime = etime, 
