@@ -1,4 +1,6 @@
+import imp
 import json
+from math import ceil
 from django.shortcuts import render, redirect
 from django_nextjs.render import render_nextjs_page_sync
 from django.http import HttpResponse
@@ -8,6 +10,8 @@ from django.contrib.auth.models import User, auth
 from adminportal.models import event, adminUser
 # from rest_framework.decorators import api_view
 from django.http import JsonResponse
+from math import ceil
+from django.db.models import Q
 # Create your views here.
 
 
@@ -44,6 +48,7 @@ def newAdmin(request):
 def newEvent(request):
     if request.method == 'POST':
         
+        username = username.POST["username"]
         event_name = request.POST["event_name"]
         event_photo = request.POST['event_photo']
         stime = request.POST['stime']
@@ -58,7 +63,8 @@ def newEvent(request):
         fees = request.POST['fees']
         last_day = request.POST['last_day']
 
-        user_model = event(     event_name = event_name, 
+        user_model = event(     username = username,
+                                event_name = event_name, 
                                 event_photo = event_photo, 
                                 stime = stime, 
                                 etime = etime, 
@@ -76,13 +82,35 @@ def newEvent(request):
         return redirect('new_event')
 
 
-# @api_view(['GET', 'POST', 'DELETE'])
-# def displayEvent(request):
-#     if request.method == 'GET':
+@csrf_exempt
+def showEvent(request, id):
+    if request.method == 'GET':
+        criterion1 = Q(id=id) #any query you want
+        getData = event.objects.filter(criterion1).values()
+        print(getData)
+    return HttpResponse('success')
+
+        # return JsonResponse(event_name, safe=False)
+        # getData = list(event.objects.filter((Q(event_name = event_name))).values())
+        # # getData = list(files.objects.filter(Q(userid = userId)).values())
+        # # getData = list(files.objects.all().values())
+        # print(getData)
+        # getData = json.dumps(getData)
+        # return JsonResponse(getData, safe=False)
+
+# @csrf_exempt
+# def showEvent(request):
+#     if request.method == "GET":
 #         getData = list(event.objects.all().values())
 #         print(getData)
-#         getData = json.dumps(getData)
-#     return JsonResponse(getData, safe = False)
+#         return HttpResponse('success')
+        # getdata = json.dumps(getData)
+        # return JsonResponse(getdata, safe=False)
+
+
+
+
+
 
 def sign_up(request):
     return render_nextjs_page_sync(request)

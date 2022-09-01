@@ -9,6 +9,8 @@ urlpatterns = [
     path('newAdmin', (views.newAdmin), name='newAdmin'),
     path('newEvent', views.newEvent, name='newEvent'),
     path('new_event',views.new_event,name='new_event'),
+    # path('showEvent/<str:userid>/<str:brand>/<str:bookmark>',show_all_product),
+    path('showEvent/<str:id>',views.showEvent,name='showEvent/'),
 
 
     
